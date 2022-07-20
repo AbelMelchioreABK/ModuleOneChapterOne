@@ -11,13 +11,15 @@ void challengeOne();
 void challengeTwo();
 bool challengeThree();
 void challengeFour();
+void challengeFive();
 
 int main()
 {
 	//challengeOne();
 	//challengeTwo();
 	//cout << "Your date was" << (challengeThree()?"" :"n't") << " a leap year." << endl;
-	challengeFour();
+	//challengeFour();
+	challengeFive();
 }
 
 void challengeOne() {
@@ -86,3 +88,41 @@ void challengeFour() {
 	}
 	cout << endl;
 }
+
+void challengeFive() {
+	int data[30]{ 13, 20, 0, 25, 19, 28, 29, 8, 16, 10, 5, 2, 6, 7, 22, 4, 18, 21, 11, 3, 17, 9, 12, 26, 1, 14, 27, 24, 23, 15 };
+
+	for (int i = 0; i < 30; i++) {
+		switch (rand() % 4) {
+			case 0:
+				data[i] = data[i] * 5;
+				break;
+			case 1:
+				data[i] = data[i] / 5;
+				break;
+			case 2:
+				data[i] = data[i] + 5;
+				break;
+			case 3:
+				data[i] = data[i] - 5;
+				break;
+		}
+	}
+
+	int largest = data[0];
+
+	for(int i = 0; i < 30; i++) {
+		if (data[i] > largest) {
+			largest = data[i];
+		}
+	}
+
+	cout << "The largest Number in this list: ";
+	for (int i : data) {
+		cout << i << " ";
+	}
+	cout << endl << " is " << largest << endl;
+
+}
+
+
