@@ -5,6 +5,9 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include "Car.h"
+#include "Airplane.h"
+#include "Boat.h"
 
 using namespace std;
 void challengeOne();
@@ -12,6 +15,7 @@ void challengeTwo();
 bool challengeThree();
 void challengeFour();
 void challengeFive();
+void challengeSix();
 
 int main()
 {
@@ -19,7 +23,8 @@ int main()
 	//challengeTwo();
 	//cout << "Your date was" << (challengeThree()?"" :"n't") << " a leap year." << endl;
 	//challengeFour();
-	challengeFive();
+	//challengeFive();
+	challengeSix();
 }
 
 void challengeOne() {
@@ -125,4 +130,43 @@ void challengeFive() {
 
 }
 
+void challengeSix() {
+	Car* car = new Car(20.6f, "Red");
+	car->drive();
+	car->speedUp(22.33f);
+	car->drive();
+	car->stop();
+	car->drive();
+	car->honk();
+	cout << "you have moved " << car->getDistanceTraveled() << " units of distance" << endl;
+	car->resetOdometer();
+	cout << "you have moved " << car->getDistanceTraveled() << " units of distance" << endl;
 
+	delete car;
+
+	Boat* boat = new Boat(13.2f, "Blue");
+	boat->drive();
+	boat->speedUp(10.2f);
+	boat->drive();
+	boat->stop();
+	boat->drive();
+	boat->honk();
+	cout << "you have moved " << boat->getDistanceTraveled() << " units of distance" << endl;
+	boat->resetOdometer();
+	cout << "you have moved " << boat->getDistanceTraveled() << " units of distance" << endl;
+
+	delete boat;
+
+	Airplane* airplane = new Airplane(1300.2f, "Blue");
+	airplane->drive();
+	airplane->slowDown(200.2f);
+	airplane->drive();
+	airplane->stop();
+	airplane->drive();
+	airplane->honk();
+	cout << "you have moved " << airplane->getDistanceTraveled() << " units of distance" << endl;
+	airplane->resetOdometer();
+	cout << "you have moved " << airplane->getDistanceTraveled() << " units of distance" << endl;
+
+	delete airplane;
+}
