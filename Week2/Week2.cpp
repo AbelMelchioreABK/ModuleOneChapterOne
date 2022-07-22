@@ -8,6 +8,7 @@
 #include "Car.h"
 #include "Airplane.h"
 #include "Boat.h"
+#include "Game.h"
 
 using namespace std;
 void challengeOne();
@@ -24,7 +25,9 @@ int main()
 	//cout << "Your date was" << (challengeThree()?"" :"n't") << " a leap year." << endl;
 	//challengeFour();
 	//challengeFive();
-	challengeSix();
+	//challengeSix();
+	Game* game = new Game();
+	game->startGameLoop();
 }
 
 void challengeOne() {
@@ -165,6 +168,13 @@ void challengeSix() {
 	airplane->drive();
 	airplane->honk();
 	cout << "you have moved " << airplane->getDistanceTraveled() << " units of distance" << endl;
+
+
+	Vehicle* abstractThing = airplane;
+	cout << abstractThing->getDistanceTraveled() << endl;
+	Airplane* nonAbstractThing = (Airplane*)abstractThing;
+	cout << nonAbstractThing->getDistanceTraveled() << endl;
+
 	airplane->resetOdometer();
 	cout << "you have moved " << airplane->getDistanceTraveled() << " units of distance" << endl;
 

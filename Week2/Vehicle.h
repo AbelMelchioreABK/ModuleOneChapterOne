@@ -47,6 +47,7 @@ class Vehicle
 			return speed;
 		}
 
+		// should probably rename this function to reset distance traveled to keep in line with other name schemes
 		void resetOdometer() {
 			distanceTraveled = 0;
 		}
