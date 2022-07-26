@@ -131,6 +131,7 @@
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="Week2.cpp" />
   </ItemGroup>
   <ItemGroup>

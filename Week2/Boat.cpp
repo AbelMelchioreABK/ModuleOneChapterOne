@@ -3,9 +3,9 @@
 
 void Boat::drive() {
 	this->distanceTraveled += this->speed;
-	std::cout << "We have SAILED " << this->speed << std::endl;
+	cout << "We have SAILED " << this->speed << endl;
 }
 
 void Boat::honk() {
-	std::cout << "Honk Honk but like a goose" << std::endl;
+	cout << "Honk Honk but like a goose" << endl;
 }

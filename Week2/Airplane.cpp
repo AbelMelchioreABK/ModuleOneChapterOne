@@ -3,9 +3,9 @@
 
 void Airplane::drive() {
 	this->distanceTraveled += this->speed;
-	std::cout << "We have FLEW " << this->speed << std::endl;
+	cout << "We have FLEW " << this->speed << endl;
 }
 
 void Airplane::honk() {
-	std::cout << "Squawk Squawk like a roadrunner" << std::endl;
+	cout << "Squawk Squawk like a roadrunner" << endl;
 }

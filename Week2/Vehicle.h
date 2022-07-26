@@ -3,56 +3,33 @@
 #include <string>
 #include <algorithm>
 
+using namespace std;
+
 class Vehicle
 {
 	protected:
 		float speed;
-		std::string color;
+		string color;
 		float distanceTraveled;
 
 	public:
-		Vehicle() : Vehicle(0) {}
-		Vehicle(float speed) : Vehicle(speed, "") {}
-		Vehicle(std::string color) : Vehicle(0, color) {}
-		Vehicle(float speed, std::string color) {
-			this->speed = speed;
-			this->color = color;
-			this->distanceTraveled = 0.0f;
-		}
-		~Vehicle() {}
+		Vehicle();
+		Vehicle(float speed);
+		Vehicle(std::string color);
+		Vehicle(float speed, std::string color);
+		~Vehicle();
 		virtual void drive() = 0;
 		virtual void honk() = 0;
-		void speedUp(float speed) {
-			this->speed += speed;
-		}
-		void slowDown(float speed) {
-			this->speed -= speed;
-			speed = std::max(0.0f, speed);
-		}
-		void stop() {
-			this->speed = 0;
-		}
-
-		void setColor(std::string color) {
-			this->color = color;
-		}
-		std::string getColor() {
-			return color;
-		}
-
-		void setSpeed(float speed) {
-			this->speed = speed;
-		}
-		float getSpeed() {
-			return speed;
-		}
+		void speedUp(float speed);
+		void slowDown(float speed);
+		void stop();
+		void setColor(std::string color);
+		string getColor();
+		void setSpeed(float speed);
+		float getSpeed();
 
 		// should probably rename this function to reset distance traveled to keep in line with other name schemes
-		void resetOdometer() {
-			distanceTraveled = 0;
-		}
-		float getDistanceTraveled() {
-			return distanceTraveled;
-		}
+		void resetOdometer();
+		float getDistanceTraveled();
 };
 

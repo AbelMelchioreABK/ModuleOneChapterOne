@@ -3,9 +3,9 @@
 
 void Car::drive() {
 	this->distanceTraveled += this->speed;
-	std::cout << "We have drove " << this->speed << std::endl;
+	cout << "We have drove " << this->speed << endl;
 }
 
 void Car::honk() {
-	std::cout << "Beep Beep like a roadrunner" << std::endl;
+	cout << "Beep Beep like a roadrunner" << endl;
 }
