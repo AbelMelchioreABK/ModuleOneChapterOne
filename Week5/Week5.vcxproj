@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{444e1100-28b2-462a-b84f-504942854a5b}</ProjectGuid>
-    <RootNamespace>Week3</RootNamespace>
+    <ProjectGuid>{3d56b151-e2af-44dd-b086-1a2e4c35c8a9}</ProjectGuid>
+    <RootNamespace>Week5</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -80,6 +80,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;Winmm.lib;enet.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,10 +105,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\amelchiore\Downloads\enet\enet-1.3.17\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\amelchiore\Downloads\enet\enet-1.3.17;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Ws2_32.lib;Winmm.lib;enet64.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,7 +131,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Week3.cpp" />
+    <ClCompile Include="BeeHive.cpp" />
+    <ClCompile Include="BeeHiveSimulation.cpp" />
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Farmer.cpp" />
+    <ClCompile Include="Week5.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BeeHive.h" />
+    <ClInclude Include="BeeHiveSimulation.h" />
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="Farmer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
