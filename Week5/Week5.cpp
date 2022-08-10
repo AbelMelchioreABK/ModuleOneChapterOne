@@ -2,6 +2,9 @@
 #include <iostream>
 #include "BeeHiveSimulation.h"
 
+#include "Client.h"
+#include "Server.h"
+
 using namespace std;
 
 // server
@@ -15,13 +18,32 @@ bool CreateServer();
 bool CreateClient();
 void NetworkingProject();
 void StartBeeHive();
+void ChatRoom();
 
 int main(int argc, char** argv)
 {
     //StartBeeHive();
-    NetworkingProject();
+    //NetworkingProject();
+    ChatRoom();
 }
 
+void ChatRoom()
+{
+    cout << "1) Create Sever" << endl;
+    cout << "2) Create Client" << endl;
+    int type;
+    cin >> type;
+    if (type == 1)
+    {
+        Server server;
+        server.init();
+    }
+    else if(type == 2)
+    {
+        Client client;
+        client.init();
+    }
+}
 
 void NetworkingProject()
 {
@@ -200,12 +222,11 @@ bool CreateClient()
         0 /* assume any amount of outgoing bandwidth */);
 
     cout << "Please enter a username" << endl;
-    cint >> username;
+    cin >> username;
 
     return client != nullptr;
 }
 
-// This just vomits you into an other file
 void StartBeeHive()
 {
     BeeHiveSimulation *sim = new BeeHiveSimulation(3,1);

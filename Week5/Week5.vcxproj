@@ -133,8 +133,10 @@
   <ItemGroup>
     <ClCompile Include="BeeHive.cpp" />
     <ClCompile Include="BeeHiveSimulation.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="Farmer.cpp" />
+    <ClCompile Include="Server.cpp" />
     <ClCompile Include="Week5.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,8 @@
     <ClInclude Include="BeeHiveSimulation.h" />
     <ClInclude Include="Container.h" />
     <ClInclude Include="Farmer.h" />
+    <ClInclude Include="Server.h" />
+    <ClInclude Include="Client.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
